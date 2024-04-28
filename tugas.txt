@@ -1,0 +1,60 @@
+Dalam proyek penting ini, Anda akan menerapkan pengetahuan Anda tentang React dengan membangun aplikasi React yang dinamis dan interaktif. Proyek ini akan mencakup berbagai aspek React, termasuk TSX dan Komponen, Hooks, State dan Props, Forms dan Events, React Router.
+Opsi Proyek:
+Pilih salah satu tema berikut untuk aplikasi React Anda:
+1. Aplikasi Berita: Membuat aplikasi yang mengambil dan menampilkan artikel berita dari API eksternal. Memungkinkan pengguna memfilter berita berdasarkan kategori, mencari topik tertentu, dan melihat informasi detail tentang setiap artikel.
+2. Aplikasi Pokemon: Mengembangkan aplikasi yang memanfaatkan API Pokemon untuk menampilkan informasi tentang Pokemon yang berbeda. Menerapkan fitur-fitur seperti mencari Pokemon, melihat detail tentang masing-masing Pokemon, dan membuat daftar Pokemon favorit.
+3. Aplikasi Cuaca: Membangun aplikasi cuaca yang mengambil data cuaca real-time dari API cuaca. Memberi pengguna kemampuan untuk mencari kondisi cuaca di berbagai lokasi, melihat perkiraan terperinci, dan beralih di antara unit pengukuran yang berbeda.
+4. Anda juga dapat memilih tema apa pun untuk aplikasi React Anda dengan memilih API yang sesuai dengan minat atau tujuan Anda. Pastikan API menyediakan data yang cukup untuk mengimplementasikan fitur-fitur utama dalam tema pilihan Anda. Sertakan link dokumentasi untuk API dalam pengajuan proyek Anda.
+Hasil yang Diharapkan:
+1. Bangun Situs Web React News Menggunakan News API
+2. Cara Membuat Aplikasi Cuaca Menggunakan React JS Pada Tahun 2023 Penjelasan Langkah Demi Langkah
+3. Membangun Aplikasi Web Pokemon - Pokemon API ReactJS
+Persyaratan
+1. TSX dan Komponen:
+A. Atur aplikasi Anda ke dalam komponen modular.
+B. Gunakan sintaksis TSX untuk merender elemen UI.
+2. Kait, Status, dan Alat Peraga:
+A. Menerapkan setidaknya dua komponen fungsional yang menggunakan alat peraga untuk meneruskan data.
+B. Manfaatkan status untuk mengelola data dinamis dalam aplikasi Anda.
+C. Integrasikan hook seperti useState dan useEffect jika diperlukan.
+3. Bentuk dan Acara :
+A. Menerapkan formulir untuk menangkap masukan pengguna.
+B. Menangani acara pengiriman formulir.
+C. Validasi dan kelola data formulir menggunakan status React.
+4. Bereaksi Router:
+A. Manfaatkan React Router untuk navigasi dalam aplikasi Anda.
+B. Siapkan beberapa rute ke komponen/halaman berbeda.
+Keahlian
+Kemampuan untuk membuat dan mengelola data dalam Aplikasi React
+Kemampuan untuk membuat perutean dasar dalam aplikasi React
+Kemampuan untuk menggunakan API dan menampilkan data ke aplikasi React
+Kemampuan untuk menggunakan Hooks dalam aplikasi React
+Kiat
+Berikut beberapa tip untuk membantu mengerjakan tugas ini secara bertahap, hari demi hari:
+Hari 1: Memahami Persyaratan dan Penyiapan Proyek
+Tinjau ringkasan proyek secara menyeluruh.
+Pilih tema untuk aplikasi React Anda (Berita, Pokemon, atau Cuaca).
+Buat sketsa gambar rangka atau tata letak dasar untuk aplikasi Anda.
+Siapkan proyek React baru menggunakan Create React App atau boilerplate React pilihan Anda.
+Buat komponen utama dan struktur folder berdasarkan gambar rangka Anda.
+Inisialisasi sistem kontrol versi Anda (misalnya Git) dan lakukan penerapan awal.
+Hari 2: TSX, Komponen, dan Negara Bagian
+Terapkan TSX dasar untuk komponen Anda.
+Buat setidaknya dua komponen fungsional dan atur dalam proyek Anda.
+Gunakan data dummy untuk menguji rendering komponen.
+Integrasikan manajemen status menggunakan useState di komponen Anda.
+Meneruskan props antar komponen untuk menyimulasikan aliran data.
+Uji dan debug komponen Anda untuk memastikan komponen merender dan menerima data dengan benar.
+Hari 3: Formulir, Acara, dan React Router
+Buat formulir untuk masukan pengguna berdasarkan kebutuhan proyek.
+Menerapkan acara pengiriman formulir dan mengelola data formulir menggunakan status React.
+Uji formulir Anda untuk memastikan formulir menangkap dan menangani masukan pengguna secara akurat.
+Integrasikan React Router untuk navigasi dalam aplikasi Anda.
+Siapkan beberapa rute yang sesuai dengan komponen/halaman berbeda.
+Uji navigasi dan pastikan komponen dirender seperti yang diharapkan pada rute yang berbeda.
+Hari 4: Pengait Tingkat Lanjut dan Sentuhan Akhir
+Tangani pertimbangan tambahan, seperti desain responsif, dan penanganan kesalahan.
+Selesaikan aplikasi Anda, pastikan semua fitur berfungsi dengan lancar.
+Tulis file readme komprehensif yang mencakup ikhtisar proyek Anda, petunjuk instalasi, dan informasi relevan lainnya.
+Pastikan repositori GitHub Anda terorganisir dengan baik dan menyertakan dokumentasi yang diperlukan.
+•
