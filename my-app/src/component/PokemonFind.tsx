@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 interface Pokemon {
-  // Interface untuk mendefinisikan struktur data Pokemon
   name: string;
   sprites: {
     front_default: string;
@@ -30,6 +29,7 @@ function PokemonFind() {
           throw new Error("Pokemon not found!");
         }
         const data = await response.json();
+        console.log(data); //object abilities dll
         setPokemonData(data); // Mengupdate state dengan data Pokemon yang diperoleh dari API
         setIsLoading(false); // Mengubah status loading menjadi false setelah data diperoleh
       } catch (error) {
@@ -59,34 +59,39 @@ function PokemonFind() {
   };
 
   return (
-    <div className="max-w-md mx-auto my-10 p-6 bg-gray-100 rounded-lg shadow-xl">
+    <div className="max-w-md mx-auto my-10 p-6 bg-gray-100 rounded-lg shadow-xl border border-gray-300">
+      {/* Container untuk komponen pencarian pokemon */}
       <div className="text-center mb-4">
-        <h1 className="text-3xl font-semibold">Pokemon Find</h1>
-        {/* header */}
+        {/* Header judul komponen */}
+        <h1 className="text-3xl font-semibold">Find your Pokemon</h1>
       </div>
       <div className="flex items-center justify-center mb-4">
+        {/* Input untuk masukkan nama pokemon */}
         <input
           type="text"
           placeholder="Enter Pokemon Name"
           value={text}
-          onChange={handleInputChange} //{/* handleInputChange Menghubungkan input dengan fungsi handleInputChange untuk mengupdate state text */}
+          onChange={handleInputChange} // Menghubungkan input dengan fungsi handleInputChange untuk mengupdate state text
           className="p-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
         />
-
+        {/* Tombol "Search" untuk memulai pencarian */}
         <button
-          onClick={handleSearch} //{/* handleSearch Menghubungkan tombol "Search" dengan fungsi handleSearch untuk memulai pencarian */}
+          onClick={handleSearch} // Menghubungkan tombol "Search" dengan fungsi handleSearch untuk memulai pencarian
           className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
         >
           Search
         </button>
       </div>
 
+      {/* Menampilkan status loading saat data sedang diambil */}
       {isLoading ? (
         <div className="text-center">Loading...</div>
       ) : (
+        // Setelah loading, jika berhasil, menampilkan detail pokemon
         <div>
           {pokemonData ? (
             <div className="text-center">
+              {/* Detail pokemon */}
               <h2 className="text-2xl font-semibold mb-2">
                 {pokemonData.name}
               </h2>
@@ -113,6 +118,7 @@ function PokemonFind() {
               </div>
             </div>
           ) : (
+            // Jika pencarian dilakukan tapi tidak ada hasil
             searchTriggered && (
               <div className="text-center">No Pokemon found</div>
             )
