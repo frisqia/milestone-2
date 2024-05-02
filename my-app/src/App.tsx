@@ -5,7 +5,7 @@ import HomeCatalog from "./component/HomeCatalog";
 
 function App() {
   return (
-    <div className="flex bg-gray-100 min-h-screen">
+    <div className="grid bg-gray-100 min-h-screen">
       <header className="bg-blue-600 py-4">
         <h1 className="text-3xl text-white text-center">Pokemon Web APP</h1>
       </header>
