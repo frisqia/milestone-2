@@ -9,7 +9,7 @@ interface PokemonResult {
 }
 
 function PokemonDashboard() {
-  const [pokemonResults, setPokemoResults] = useState<PokemonResult[]>([]);
+  const [PokemonResults, setPokemoResults] = useState<PokemonResult[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -17,7 +17,6 @@ function PokemonDashboard() {
       try {
         const url = "https://pokeapi.co/api/v2/pokemon";
         const response = await fetch(url);
-        console.log(response);
         if (!response.ok) {
           throw new Error("Failed Fetch pokemon data!");
         }
@@ -32,14 +31,18 @@ function PokemonDashboard() {
     }
     fetchPokemon();
   }, []);
-
   return (
     <>
-      {isLoading == true && <h1>Loading ....</h1>}
+      {isLoading == true && <h1>Loading ...</h1>}
       {isLoading == false &&
-        pokemonResults.length > 0 &&
-        pokemonResults.map((result) => {
-          return <h1>{result.name}</h1>;
+        PokemonResults.length > 0 &&
+        PokemonResults.map((result) => {
+          return (
+            <div>
+              <h1>{result.name}</h1>;
+              {/* <img src={result.sprites.front_default}></img> */}
+            </div>
+          );
         })}
     </>
   );
