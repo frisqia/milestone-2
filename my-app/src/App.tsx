@@ -22,6 +22,7 @@ function App() {
             <Route path="/Pokedex" element={<PokemonDashboard />} />
           </Routes>
         </div>
+        <PokemonDashboard />
       </div>
     </div>
   );
