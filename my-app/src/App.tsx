@@ -19,10 +19,9 @@ function App() {
           </nav>
           <Routes>
             <Route path="/Pokedex" element={<PokemonFind />} />
-            <Route path="/Pokedex" element={<HomeCatalog />} />
+            <Route path="/Pokedex" element={<PokemonDashboard />} />
           </Routes>
         </div>
-        <PokemonDashboard />
       </div>
     </div>
   );
