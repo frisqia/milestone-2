@@ -2,6 +2,7 @@ import React from "react";
 import PokemonFind from "./component/PokemonFind";
 import { Link, Route, Routes } from "react-router-dom";
 import HomeCatalog from "./component/HomeCatalog";
+import PokemonDashboard from "./component/PokemonDashboard";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/Pokedex" element={<HomeCatalog />} />
           </Routes>
         </div>
+        <PokemonDashboard />
       </div>
     </div>
   );
