@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Pokemon {
   name: string;
@@ -7,30 +8,51 @@ interface Pokemon {
   };
 }
 
-const HomeCatalog = () => {
+function HomeCatalog() {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-  
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
+    async function fetchPokemonList() {
       try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+        const url = "https://pokeapi.co/api/v2/pokemon";
+        const response = await fetch(url);
         if (!response.ok) {
-          throw new Error("Failed to fetch Pokemon data");
+          throw new Error("Failed to fetch pokemon data!");
         }
         const data = await response.json();
         setPokemonList(data.results);
+        setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching Pokemon data:", error);
+        alert(error);
       }
-    };
-
-    fetchData();
+    }
+    fetchPokemonList();
   }, []);
 
   return (
-    
-  )
+    <>
+      {isLoading ? (
+        <h1>Loading....</h1>
+      ) : (
+        <>
+          {pokemonList.length > 0 && (
+            <div className="grid grid-cols-3 gap-4">
+              {pokemonList.map((pokemon, index) => (
+                <div key={index} onClick={() => navigate(`/pokemon/${pokemon.name}`)}>
+                  <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                  <h1>{pokemon.name}</h1>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      )}
+    </>
+  );
 }
 
 export default HomeCatalog;
+
+
