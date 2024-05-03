@@ -11,11 +11,13 @@ function App() {
       </header>
       <div className="container mx-auto py-8">
         {/* <HomeCatalog /> */}
-        <nav>
+        <nav className="grid">
           <Link to="/Pokedex">Pokedex</Link>
+          <Link to="/Catalog">Catalog</Link>
         </nav>
         <Routes>
           <Route path="/Pokedex" element={<PokemonFind />} />
+          <Route path="/Pokedex" element={<HomeCatalog />} />
         </Routes>
       </div>
     </div>
