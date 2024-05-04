@@ -63,7 +63,9 @@ function PokemonFind() {
       {/* Container untuk komponen pencarian pokemon */}
       <div className="text-center mb-4">
         {/* Header judul komponen */}
-        <h1 className="text-3xl font-semibold">Find your Pokemon</h1>
+        <h1 className="text-3xl text-orange-400 text-shadow-lg font-semibold">
+          Find your Pokemon
+        </h1>
       </div>
       <div className="flex items-center justify-center mb-4">
         {/* Input untuk masukkan nama pokemon */}
