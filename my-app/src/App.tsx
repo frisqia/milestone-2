@@ -1,7 +1,6 @@
 import React from "react";
 import PokemonFind from "./component/PokemonFind";
 import { Link, Route, Routes } from "react-router-dom";
-import HomeCatalog from "./component/HomeCatalog";
 import PokemonDashboard from "./component/PokemonDashboard";
 import RegisterForm from "./component/RegistrasiForm";
 import LoginForm from "./component/LoginForm";
