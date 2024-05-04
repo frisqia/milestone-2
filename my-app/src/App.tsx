@@ -2,6 +2,10 @@ import React from "react";
 import PokemonFind from "./component/PokemonFind";
 import { Link, Route, Routes } from "react-router-dom";
 import HomeCatalog from "./component/HomeCatalog";
+import PokemonDashboard from "./component/PokemonDashboard";
+import RegisterForm from "./component/RegistrasiForm";
+import LoginForm from "./component/LoginForm";
+import PrivateRouter from "./component/PrivateRouter";
 
 function App() {
   return (
@@ -16,16 +20,39 @@ function App() {
         </div>
       </header>
       <div className="grid container mx-auto py-8">
-        <nav className="grid">
+        <nav className="flex items-center justify-center">
+          <Link
+            to="/Registration"
+            className="text-3x1 flex  justify-between text-white"
+          >
+            Registrasi
+          </Link>
+          <Link
+            to="/Login"
+            className="text-3x1 flex  justify-between text-white"
+          >
+            Login
+          </Link>
           <Link
             to="/Pokedex"
-            className="text-3x1 flex items-center justify-center text-white"
+            className="text-3x1 flex  justify-between text-white"
           >
             Pokedex
           </Link>
+          <Link
+            to="/Catalog"
+            className="text-3x1 flex  justify-between text-white"
+          >
+            catalog
+          </Link>
         </nav>
         <Routes>
-          <Route path="/Pokedex" element={<PokemonFind />} />
+          <Route path="/Registration" element={<RegisterForm />} />
+          <Route path="/Login" element={<LoginForm />} />
+          <Route path="/" Component={PrivateRouter}>
+            <Route path="/Pokedex" Component={PokemonFind} />
+            <Route path="/Catalog" Component={PokemonDashboard} />
+          </Route>
         </Routes>
       </div>
     </div>
