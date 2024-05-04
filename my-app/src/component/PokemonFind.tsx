@@ -59,7 +59,7 @@ function PokemonFind() {
   };
 
   return (
-    <div className="max-w-md mx-auto my-10 p-6 bg-gray-100 rounded-lg shadow-xl border border-gray-300">
+    <div className="max-w-md mx-auto my-10 p-6 bg-orange-100 rounded-lg shadow-xl border border-orange-300">
       {/* Container untuk komponen pencarian pokemon */}
       <div className="text-center mb-4">
         {/* Header judul komponen */}
@@ -74,12 +74,12 @@ function PokemonFind() {
           placeholder="Enter Pokemon Name"
           value={text}
           onChange={handleInputChange} // Menghubungkan input dengan fungsi handleInputChange untuk mengupdate state text
-          className="p-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          className="p-2 mr-2 border border-orange-300 rounded-md focus:outline-none focus:border-indigo-500"
         />
         {/* Tombol "Search" untuk memulai pencarian */}
         <button
           onClick={handleSearch} // Menghubungkan tombol "Search" dengan fungsi handleSearch untuk memulai pencarian
-          className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+          className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 focus:outline-none focus:bg-orange-600"
         >
           Search
         </button>
@@ -87,7 +87,7 @@ function PokemonFind() {
 
       {/* Menampilkan status loading saat data sedang diambil */}
       {isLoading ? (
-        <div className="text-center">Loading...</div>
+        <div className="text-center text-orange-500">Loading...</div>
       ) : (
         // Setelah loading, jika berhasil, menampilkan detail pokemon
         <div>
@@ -122,7 +122,9 @@ function PokemonFind() {
           ) : (
             // Jika pencarian dilakukan tapi tidak ada hasil
             searchTriggered && (
-              <div className="text-center">No Pokemon found</div>
+              <div className="text-center text-orange-500">
+                No Pokemon found
+              </div>
             )
           )}
         </div>

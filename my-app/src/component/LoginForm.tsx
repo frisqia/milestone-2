@@ -62,8 +62,8 @@ function LoginForm() {
     }
   }
   return (
-    <form onSubmit={formik.handleSubmit} className="max-w-sm mx-auto mt-8">
-      <label htmlFor="email" className="block mb-2">
+    <form onSubmit={formik.handleSubmit} className="max-w-sm mx-auto mt-8 bg-orange-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
         Email
       </label>
       <input
@@ -77,7 +77,7 @@ function LoginForm() {
       {formik.touched.email && formik.errors.email ? (
         <div className="text-red-500">{formik.errors.email}</div>
       ) : null}
-      <label htmlFor="password" className="block mb-2">
+      <label htmlFor="password" className="block text-gray-700 text-sm font-bold mt-4 mb-2">
         Password
       </label>
       <input
@@ -95,7 +95,7 @@ function LoginForm() {
       <div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Submit
         </button>
@@ -104,3 +104,4 @@ function LoginForm() {
   );
 }
 export default LoginForm;
+

@@ -1,3 +1,4 @@
+// RegisterForm.jsx
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
@@ -63,8 +64,14 @@ function RegisterForm() {
     }
   }
   return (
-    <form onSubmit={formik.handleSubmit} className="max-w-sm mx-auto mt-8">
-      <label htmlFor="name" className="block mb-2">
+    <form
+      onSubmit={formik.handleSubmit}
+      className="max-w-sm mx-auto mt-8 bg-orange-100 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    >
+      <label
+        htmlFor="name"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
         Name
       </label>
       <input
@@ -78,7 +85,10 @@ function RegisterForm() {
       {formik.touched.name && formik.errors.name ? (
         <div className="text-red-500">{formik.errors.name}</div>
       ) : null}
-      <label htmlFor="email" className="block mb-2">
+      <label
+        htmlFor="email"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
         Email
       </label>
       <input
@@ -92,7 +102,10 @@ function RegisterForm() {
       {formik.touched.email && formik.errors.email ? (
         <div className="text-red-500">{formik.errors.email}</div>
       ) : null}
-      <label htmlFor="password" className="block mb-2">
+      <label
+        htmlFor="password"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
         Password
       </label>
       <input
@@ -108,7 +121,7 @@ function RegisterForm() {
       ) : null}
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
       >
         Sign Up
       </button>
