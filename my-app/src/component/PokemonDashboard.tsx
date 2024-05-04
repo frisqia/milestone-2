@@ -56,22 +56,65 @@ function PokemonDashboard() {
     navigate(`/${pokemon.name}`, { state: pokemon });
   }
 
+  const handleLogOut = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const options = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      };
+
+      const response = await fetch(
+        "https://library-crud-sample.vercel.app/api/user/logout",
+        options
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to logout");
+      }
+
+      localStorage.removeItem("token");
+      navigate("/Login");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   return (
-    <div className="grid grid-cols-5 gap-4">
-      {isLoading && <h1>Loading ....</h1>}
-      {!isLoading &&
-        pokemonResults.length > 0 &&
-        pokemonResults.map((result) => (
-          <div
-            key={result.name}
-            onClick={() => handleNavigate(result)}
-            className="rounded-lg bg-orange-500 shadow-md p-4 text-center relative"
-          >
-            <img src={result.imageUrl} alt={result.name} className="mx-auto" />
-            <h1 className="text-white font-bold text-lg mt-2">{result.name}</h1>
-          </div>
-        ))}
-    </div>
+    <>
+      <div className="flex justify-center mb-4">
+        <button
+          onClick={handleLogOut}
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+        >
+          Logout
+        </button>
+      </div>
+      <div className="grid grid-cols-5 gap-4">
+        {isLoading && <h1>Loading ....</h1>}
+        {!isLoading &&
+          pokemonResults.length > 0 &&
+          pokemonResults.map((result) => (
+            <div
+              key={result.name}
+              onClick={() => handleNavigate(result)}
+              className="rounded-lg bg-orange-500 shadow-md p-4 text-center relative"
+            >
+              <img
+                src={result.imageUrl}
+                alt={result.name}
+                className="mx-auto"
+              />
+              <h1 className="text-white font-bold text-lg mt-2">
+                {result.name}
+              </h1>
+            </div>
+          ))}
+      </div>
+    </>
   );
 }
 
