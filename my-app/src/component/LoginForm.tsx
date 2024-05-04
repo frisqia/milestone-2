@@ -1,4 +1,3 @@
-// LoginForm.jsx
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
@@ -9,7 +8,7 @@ interface RegisterUser {
 }
 
 function LoginForm() {
-  const navigation = useNavigate();
+  const navigation = useNavigate(); // Menggunakan useNavigate untuk navigasi
   const loginValid = Yup.object({
     password: Yup.string()
       .min(6, "Password must be at least 6 characters")
@@ -61,9 +60,21 @@ function LoginForm() {
       alert(error);
     }
   }
+
+  // Fungsi untuk navigasi ke halaman RegisterForm
+  const handleRegisterClick = () => {
+    navigation("/Registration");
+  };
+
   return (
-    <form onSubmit={formik.handleSubmit} className="max-w-sm mx-auto mt-8 bg-orange-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+    <form
+      onSubmit={formik.handleSubmit}
+      className="max-w-sm mx-auto mt-8 bg-orange-100 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    >
+      <label
+        htmlFor="email"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
         Email
       </label>
       <input
@@ -77,7 +88,10 @@ function LoginForm() {
       {formik.touched.email && formik.errors.email ? (
         <div className="text-red-500">{formik.errors.email}</div>
       ) : null}
-      <label htmlFor="password" className="block text-gray-700 text-sm font-bold mt-4 mb-2">
+      <label
+        htmlFor="password"
+        className="block text-gray-700 text-sm font-bold mt-4 mb-2"
+      >
         Password
       </label>
       <input
@@ -93,15 +107,25 @@ function LoginForm() {
       ) : null}
       <br />
       <div>
-        <button
-          type="submit"
-          className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Submit
-        </button>
+        <br />
+        <div className="flex justify-between items-center">
+          <button
+            type="submit"
+            className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Sign In
+          </button>
+          {/* Tombol untuk menuju halaman RegisterForm */}
+          <button
+            type="button"
+            onClick={handleRegisterClick} // Memanggil fungsi handleRegisterClick saat tombol diklik
+            className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Register
+          </button>
+        </div>
       </div>
     </form>
   );
 }
 export default LoginForm;
-
